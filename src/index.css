@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #EDE8E0;
+    color: #2C2A29;
+  }
+}
+
+/* Textura sutil de papel algodón sin imágenes externas */
+.paper-texture {
+  background-color: #FAF8F5;
+  background-image: radial-gradient(rgba(184, 159, 125, 0.08) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.envelope-texture {
+  background-color: #F2EDE4;
+  background-image: radial-gradient(rgba(110, 104, 98, 0.07) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+/* Soporte 3D real para la solapa del sobre en navegadores móviles (iOS/Android) */
+.envelope-perspective {
+  perspective: 1200px;
+  -webkit-perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Brillo sutil tipo seda sobre el sello de lacre */
+@keyframes waxShimmer {
+  0% {
+    transform: translateX(-140%) rotate(25deg);
+  }
+  55%, 100% {
+    transform: translateX(180%) rotate(25deg);
+  }
+}
+
+.wax-shimmer {
+  animation: waxShimmer 3.8s ease-in-out infinite;
+}
